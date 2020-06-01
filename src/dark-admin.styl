@@ -24,14 +24,6 @@
 		th, td
 			background-color transparent !important
 
-:root:root
-	--flex-nav-background sidebar-bg
-	--sidebar-background-light sidebar-bg
-	--sidebar-background-light-hover darken(sidebar-bg, 15%)
-
-.sidebar-light .sidebar-item
-	color sidebar-fg
-
 .sidebar-flex__search .rc-input__element
 	background-color darken(sidebar-bg, 20%)
 	color input-fg
@@ -153,9 +145,40 @@
 	border-bottom-right-radius 0 !important
 	border-top-right-radius 0 !important
 
-.sidebar-light .sidebar-item__picture
-	.avatar
-		box-shadow none
+.flex-nav:not(.animated-hidden)
+	.sidebar-item__picture
+		.avatar
+			box-shadow none
+
+	.rooms-list
+		color sidebar-fg
+		background-color sidebar-bg
+
+	.sidebar-flex__header
+		color sidebar-fg
+		background-color darken(sidebar-bg, 10%)
+		border-bottom 1px solid border-color
+
+	.sidebar-item
+		color: sidebar-fg
+
+	.sidebar-item:hover, .rcx-accordion-item__bar:hover
+		background-color lighten(sidebar-bg, 10%)
+
+	.rcx-accordion-item__bar
+		border-color: input-border transparent transparent
+		
+	.sidebar-item--active
+		background-color lighten(sidebar-bg, 5%)
+
+.rcx-box
+	color chat-fg
+
+.rcx-select, .rcx-tile
+	background-color input-bg
+
+.rcx-select:focus-within
+	background-color lighten(input-bg, 10%)
 
 .page-list a.button
 	margin-left 0
