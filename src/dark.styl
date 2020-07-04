@@ -33,7 +33,7 @@ invisible-color = #bbb
 // Main chat area.
 chat-bg = #36393e
 chat-fg = mix(#fff, chat-bg, 70%)
-border-color = darken(chat-bg, 10%)
+border-color = lighten(chat-bg, 5%)
 reply-color = component-bg
 
 // Inputs.
@@ -154,7 +154,7 @@ body.dark-mode
 	--color-dark-light #6c727a
 	--color-gray #9ea2a8
 	--color-gray-medium #cbced1
-	--color-gray-lightest chat-fg
+	--color-gray-lightest border-color
 	--color-black #000
 	--color-white #fff
 
@@ -162,9 +162,10 @@ body.dark-mode
 	--primary-font-color chat-fg
 	--info-font-color mix(chat-fg, chat-bg, 80%)
 
+	--primary-action-color highlight-color
 	--primary-background-color highlight-color
 	--secondary-background-color darken(component-bg, 10%)
-	--component-color chat-fg
+	--component-color component-bg
 	--rc-color-error danger-color
 	--rc-color-alert warning-color
 	--rc-color-alert-light lighten(warning-color, 5%)
@@ -190,13 +191,20 @@ body.dark-mode
 	--rcx-input-colors-background-color input-bg
 	--rcx-input-colors-disabled-background-color lighten(input-bg, 15%)
 	--rcx-input-colors-border-color input-border
+	--rcx-input-colors-active-caret-color highlight-color
 	--rcx-input-colors-hover-border-color lighten(input-border, 40%)
+	--rcx-input-colors-focus-border-color highlight-color
+	--rcx-input-colors-focus-shadow-color mix(component-bg, highlight-color, 60%)
 	--rcx-button-colors-primary-background-color darken(highlight-color, 30%)
 	--rcx-button-colors-primary-disabled-background-color lighten(highlight-color, 30%)
 	--rcx-button-colors-primary-border-color darken(highlight-color, 35%)
 	--rcx-button-colors-primary-disabled-border-color lighten(highlight-color, 10%)
 	--rcx-button-colors-primary-hover-background-color darken(highlight-color, 50%)
 	--rcx-button-colors-primary-hover-border-color darken(highlight-color, 50%)
+	--rcx-button-colors-secondary-color icon-fg
+	--rcx-button-colors-secondary-hover-background-color rgba(255, 255, 255, 0.05)
+	--rcx-button-colors-secondary-hover-border-color rgba(255, 255, 255, 0.05)
+	--rcx-button-colors-secondary-disabled-background-color darken(icon-fg, 20%)
 	--rcx-button-colors-danger-background-color mix(button-cancel-bg, chat-bg, 70%)
 	--rcx-button-colors-danger-border-color darken(button-cancel-bg, 50%)
 	--rcx-button-colors-danger-hover-background-color darken(button-cancel-bg, 60%)
@@ -219,8 +227,8 @@ body.dark-mode
 	--button-primary-background var(--rc-color-button-primary)
 	--button-primary-text-color var(--color-white)
 	--button-cancel-color danger-color
-	--button-secondary-background var(--color-gray-medium)
-	--button-secondary-text-color var(--color-dark-medium)
+	--button-secondary-background lighten(chat-bg, 30%)
+	--button-secondary-text-color chat-fg
 	--input-title-color input-fg
 	--input-text-color input-fg
 	--input-placeholder-color darken(input-fg, 20%)
@@ -269,10 +277,10 @@ body.dark-mode
 	--link-font-hover-color anchor-hover-fg
 	--mention-link-background mix(chat-bg, highlight-color, 80%)
 	--mention-link-text-color highlight-color
-	--mention-link-me-background var(--color-dark-blue)
-	--mention-link-me-text-color var(--color-white)
-	--mention-link-group-background var(--rc-color-primary-dark)
-	--mention-link-group-text-color var(--color-white)
+	--mention-link-me-background mix(chat-bg, highlight-color, 80%)
+	--mention-link-me-text-color highlight-color
+	--mention-link-group-background mix(chat-bg, highlight-color, 80%)
+	--mention-link-group-text-color highlight-color
 	--message-box-placeholder-color var(--color-gray-medium)
 	--message-box-markdown-color darken(chat-fg, 30%)
 	--message-box-markdown-hover-color darken(chat-fg, 50%)
@@ -301,18 +309,36 @@ body.dark-mode
 	// @import "dark-admin"
 	@import "atom-one-dark"
 
+	.rc-form-legend, .rc-form-label
+		color lighten(component-fg, 10%)
 
 	.content-background-color, .rc-message-box, .page-home .rc-header__wrap
 		background-color chat-bg
 
+	.rc-header__name, .rcx-\\\@1k9p36u
+		color lighten(component-fg, 30%) !important
+
 	.contextual-bar__content
 		background-color component-bg
 
+	.contextual-bar, .contextual-bar__content
+		background-color component-bg;
+
 	.contextual-bar__header,
+	.contextual-bar .rcx-\\\@1flttqf,
+	.rcx-\\\@1iusre9:hover,
 	.rc-member-list__user:hover,
 	.flex-tab__result .attachments__item-link:hover
-		background-color darken(component-bg, 10%)
-
+		background-color darken(component-bg, 10%) !important
+	
+	/* Border colors */
+	.rcx-\\\@1purp9p, .rcx-\\\@xi6cg2
+		border-block-start-color border-color !important
+		border-block-end-color border-color !important
+	
+	.rcx-\\\@1iusre9, .rc-header--room, .rc-old .fixed-title
+		border-bottom-color border-color !important
+			
 	.rc-user-info-details
 		background-color lighten(component-bg, 5%)
 
@@ -322,11 +348,12 @@ body.dark-mode
 	.rc-member-list__counter,
 	.rc-user-info-details__info,
 	.rc-switch-double,
-	.flex-tab__result .attachments__name
-		color component-fg
+	.flex-tab__result .attachments__name,
+	.rcx-contextual-message .rcx-message__username
+		color component-fg !important
 
-	.sidebar-light .sidebar-item
-		color sidebar-fg
+	.sidebar-light .sidebar-item, .rcx-\\\@etdgtn
+		color sidebar-fg !important
 
 	.rcx-callout--type-warning
 		background-color mix(warning-color, chat-bg, 30%)
@@ -393,7 +420,7 @@ body.dark-mode
 	input
 		color chat-fg
 		border-color input-border
-		background-color darken(component-bg, 10%)
+		// background-color darken(component-bg, 10%)
 
 		&::placeholder
 			color component-fg
@@ -406,8 +433,7 @@ body.dark-mode
 		background-color darken(component-bg, 20%)
 
 	.rc-button
-		color #ccc
-		border-color #ccc
+		color chat-fg
 
 	.rc-user-info__row--separator,
 	.contextual-bar__header,
@@ -451,4 +477,3 @@ body.dark-mode
 	
 	.message.active, .message:hover
 		background-color darken(chat-bg, 5%)
-	
