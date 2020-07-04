@@ -1,6 +1,7 @@
 body {
   --component-color: #999;
   --primary-font-color: #444;
+  --primary-background-color: #592989;
   --info-font-color: #a0a0a0;
   --rc-color-primary: #592989;
   --rc-color-primary-background: #592989;
@@ -115,6 +116,8 @@ body.dark-mode {
   --color-gray-light: #313338;
   --primary-font-color: #c2c3c5;
   --info-font-color: #a6a7aa;
+  --primary-background-color: #955ad1;
+  --secondary-background-color: #26282c;
   --component-color: #c2c3c5;
   --rc-color-error: #b33636;
   --rc-color-alert: #fcb316;
@@ -367,7 +370,8 @@ body.dark-mode .message .info .role-tag {
   background-color: #955ad1;
   color: #fff;
 }
-body.dark-mode .message .title .role-tag {
+body.dark-mode .message .title .role-tag,
+body.dark-mode .message .title .is-bot {
   background-color: #484c53;
   border-color: #52565e;
   color: #c2c3c5;
@@ -381,7 +385,7 @@ body.dark-mode .message.new-day::after {
 }
 body.dark-mode .flex-tab .message.new-day::before {
   background-color: #59278c;
-  color: #71479d;
+  color: #bbb;
 }
 body.dark-mode .flex-tab .message.new-day::after {
   border-color: #5f2f90;
@@ -447,7 +451,8 @@ body.dark-mode .contextual-bar__header,
 body.dark-mode .rcx-accordion-item__bar {
   border-color: #313338;
 }
-body.dark-mode .rcx-accordion-item__bar:hover {
+body.dark-mode .rcx-accordion-item__bar:hover,
+body.dark-mode .rc-old .rc-message-box .reply-preview {
   background-color: #2e3035;
 }
 body.dark-mode .rcx-accordion {
@@ -465,4 +470,23 @@ body.dark-mode .rc-user-info__config-value {
 }
 body.dark-mode .rc-popover__item-radio-label:after {
   background: #955ad1;
+}
+body.dark-mode .message .reactions>li.selected,
+body.dark-mode .message .reactions>li.add-reaction {
+  background-color: #313338;
+  border-color: #52565e;
+}
+body.dark-mode .message .reactions>li.selected {
+  color: #955ad1;
+}
+body.dark-mode .message .reactions>li.add-reaction {
+  color: #7c7e81;
+}
+body.dark-mode .message .reactions>li:hover,
+body.dark-mode .message .reactions>li.add-reaction:hover {
+  border-color: #955ad1;
+}
+body.dark-mode .message.active,
+body.dark-mode .message:hover {
+  background-color: #33363b;
 }

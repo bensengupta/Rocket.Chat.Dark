@@ -50,6 +50,7 @@ light-highlight-color = #592989
 body
 	--component-color #999
 	--primary-font-color #444
+	--primary-background-color light-highlight-color
 	--info-font-color #a0a0a0
 	--rc-color-primary light-highlight-color
 	--rc-color-primary-background light-highlight-color
@@ -110,9 +111,9 @@ select,
 .hljs-doctag,
 .hljs-string,
 .hljs-type,
-.hljs-literal, 
-.hljs-number, 
-.hljs-tag .hljs-attr, 
+.hljs-literal,
+.hljs-number,
+.hljs-tag .hljs-attr,
 .hljs-template-variable,
 .hljs-variable,
 .rc-message-box__container,
@@ -126,7 +127,7 @@ select,
 .sidebar__footer
 	transition opacity 400ms linear, color 200ms, background-color 200ms, border-color 200ms
 
-body.dark-mode	
+body.dark-mode
 	--color-dark-100 #0c0d0f
 	--color-dark-90 #1e232a
 	--color-dark-80 #2e343e
@@ -161,6 +162,8 @@ body.dark-mode
 	--primary-font-color chat-fg
 	--info-font-color mix(chat-fg, chat-bg, 80%)
 
+	--primary-background-color highlight-color
+	--secondary-background-color darken(component-bg, 10%)
 	--component-color chat-fg
 	--rc-color-error danger-color
 	--rc-color-alert warning-color
@@ -297,14 +300,14 @@ body.dark-mode
 
 	// @import "dark-admin"
 	@import "atom-one-dark"
-	
+
 
 	.content-background-color, .rc-message-box, .page-home .rc-header__wrap
 		background-color chat-bg
-	
+
 	.contextual-bar__content
 		background-color component-bg
-	
+
 	.contextual-bar__header,
 	.rc-member-list__user:hover,
 	.flex-tab__result .attachments__item-link:hover
@@ -312,7 +315,7 @@ body.dark-mode
 
 	.rc-user-info-details
 		background-color lighten(component-bg, 5%)
-	
+
 	dialog,
 	.rc-modal__title,
 	.rc-switch__text,
@@ -321,31 +324,31 @@ body.dark-mode
 	.rc-switch-double,
 	.flex-tab__result .attachments__name
 		color component-fg
-	
+
 	.sidebar-light .sidebar-item
 		color sidebar-fg
-	
+
 	.rcx-callout--type-warning
 		background-color mix(warning-color, chat-bg, 30%)
-	
+
 	.messages-container
 		.rc-header, .rc-header__wrap
 			background-color darken(chat-bg, 10%)
-	
+
 	.page-list a:not(.rc-button), .page-settings a:not(.rc-button)
 		color chat-fg
 
 	tr:nth-child(odd) td, th:nth-child(odd)
 		background-color darken(chat-bg, 10%) !important
-	
+
 	tr:nth-child(even) td, th:nth-child(even)
 		background-color darken(chat-bg, 20%) !important
-	
+
 	.message .info .is-bot, .message .info .role-tag
 		background-color highlight-color
 		color #fff
-	
-	.message .title .role-tag
+
+	.message .title .role-tag, .message .title .is-bot
 		background-color lighten(chat-bg, 10%)
 		border-color lighten(chat-bg, 15%)
 		color  chat-fg
@@ -361,7 +364,7 @@ body.dark-mode
 	.flex-tab .message.new-day
 		&::before
 			background-color sidebar-bg
-			color mix(#fff, sidebar-bg, 15%)
+			color component-fg
 
 		&::after
 			border-color mix(#fff, sidebar-bg, 4%)
@@ -370,61 +373,82 @@ body.dark-mode
 		color chat-fg
 		border-color darken(chat-bg, 9%)
 		background-color darken(chat-bg, 14%)
-	
+
 	.message a i, .flex-tab a i, .message a[class^="icon-"], .flex-tab a[class^="icon-"]
 		color icon-fg
 
 		&:hover
 			color lighten(icon-fg, 40%)
-	
-	.emoji-picker, .rc-modal
+
+	.emoji-picker,
+	.rc-modal
 		background-color component-bg
-	
+
 	.secondary-background-color
 		background-color lighten(component-bg, 10%)
 
 	.rc-modal__footer
 		background-color darken(component-bg, 10%)
-	
+
 	input
 		color chat-fg
 		border-color input-border
 		background-color darken(component-bg, 10%)
-		
+
 		&::placeholder
 			color component-fg
 
 		&:focus
 			border-color input-focus
 			box-shadow none
-	
+
 	.emoji-picker .emojis .emoji-list li:hover
 		background-color darken(component-bg, 20%)
-	
+
 	.rc-button
 		color #ccc
 		border-color #ccc
-	
+
 	.rc-user-info__row--separator,
 	.contextual-bar__header,
 	.rcx-accordion-item__bar
 		border-color border-color
-	
-	.rcx-accordion-item__bar:hover
+
+	.rcx-accordion-item__bar:hover,
+	.rc-old .rc-message-box .reply-preview
 		background-color darken(chat-bg, 15%)
-	
+
 	.rcx-accordion
 		border-bottom-color border-color
-	
+
 	.attachment .attachment-title
 		color anchor-fg
 
 	.message.editing // also change --message-box-editing-color
 		background-color mix(chat-bg, #fb0, 95%)
-	
+
 	.rc-popover__item-radio:checked+.rc-popover__item-radio-label,
 	.rc-user-info__config-value
 		color highlight-color
-	
+
 	.rc-popover__item-radio-label:after
 		background highlight-color
+	
+	.message .reactions>li.selected,
+	.message .reactions>li.add-reaction
+		background-color darken(chat-bg, 10%)
+		border-color lighten(chat-bg, 15%)
+
+	.message .reactions>li.selected
+		color highlight-color
+	
+	.message .reactions>li.add-reaction
+		color icon-fg
+	
+	.message .reactions>li:hover,
+	.message .reactions>li.add-reaction:hover
+		border-color highlight-color
+	
+	.message.active, .message:hover
+		background-color darken(chat-bg, 5%)
+	
