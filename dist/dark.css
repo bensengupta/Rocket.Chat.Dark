@@ -231,8 +231,8 @@ body.dark-mode {
   --link-font-hover-color: #8643ca;
   --mention-link-background: #493f5b;
   --mention-link-text-color: #955ad1;
-  --mention-link-me-background: #493f5b;
-  --mention-link-me-text-color: #955ad1;
+  --mention-link-me-background: #5c3b44;
+  --mention-link-me-text-color: #f6435c;
   --mention-link-group-background: #493f5b;
   --mention-link-group-text-color: #955ad1;
   --message-box-placeholder-color: var(--color-gray-medium);
@@ -504,6 +504,7 @@ body.dark-mode .rc-user-info__config-value {
 body.dark-mode .rc-popover__item-radio-label:after {
   background: #955ad1;
 }
+body.dark-mode .message .reactions>li,
 body.dark-mode .message .reactions>li.selected,
 body.dark-mode .message .reactions>li.add-reaction {
   background-color: #313338;

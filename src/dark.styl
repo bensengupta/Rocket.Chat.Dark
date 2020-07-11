@@ -277,8 +277,8 @@ body.dark-mode
 	--link-font-hover-color anchor-hover-fg
 	--mention-link-background mix(chat-bg, highlight-color, 80%)
 	--mention-link-text-color highlight-color
-	--mention-link-me-background mix(chat-bg, highlight-color, 80%)
-	--mention-link-me-text-color highlight-color
+	--mention-link-me-background mix(chat-bg, #f6435c, 80%)
+	--mention-link-me-text-color #f6435c
 	--mention-link-group-background mix(chat-bg, highlight-color, 80%)
 	--mention-link-group-text-color highlight-color
 	--message-box-placeholder-color var(--color-gray-medium)
@@ -460,6 +460,7 @@ body.dark-mode
 	.rc-popover__item-radio-label:after
 		background highlight-color
 	
+	.message .reactions>li,
 	.message .reactions>li.selected,
 	.message .reactions>li.add-reaction
 		background-color darken(chat-bg, 10%)
