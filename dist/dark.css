@@ -260,6 +260,8 @@ body.dark-mode {
   --alerts-background: #1d73f5;
   --alerts-color: var(--color-white);
 /* Border colors */
+/* Text color */
+/* Admin panel background */
 }
 body.dark-mode .hljs,
 body.dark-mode .code-colors.hljs {
@@ -350,16 +352,34 @@ body.dark-mode .contextual-bar__content {
 body.dark-mode .contextual-bar__header,
 body.dark-mode .contextual-bar .rcx-\@1flttqf,
 body.dark-mode .rcx-\@1iusre9:hover,
+body.dark-mode .rcx-\@9jfjls,
+body.dark-mode .rcx-\@1yhzjdg,
+body.dark-mode .rcx-\@10ikbhr,
 body.dark-mode .rc-member-list__user:hover,
-body.dark-mode .flex-tab__result .attachments__item-link:hover {
+body.dark-mode .flex-tab__result .attachments__item-link:hover,
+body.dark-mode .contextual-bar.contextual-bar {
   background-color: #26282c !important;
 }
 body.dark-mode .rcx-\@1purp9p,
-body.dark-mode .rcx-\@xi6cg2 {
+body.dark-mode .rcx-\@xi6cg2,
+body.dark-mode .rcx-\@9jfjls,
+body.dark-mode .rcx-\@1yhzjdg {
   border-block-start-color: #3f4349 !important;
   border-block-end-color: #3f4349 !important;
 }
+body.dark-mode .rcx-\@9jfjls,
+body.dark-mode .rcx-\@1wm5na {
+  color: #bbb !important;
+}
+body.dark-mode .rcx-\@1l3asra,
+body.dark-mode .rcx-\@1rhw4nd {
+  color: #ccc !important;
+}
+body.dark-mode .rcx-\@197qq4o {
+  color: #b8b8b8 !important;
+}
 body.dark-mode .rcx-\@1iusre9,
+body.dark-mode .rcx-\@1usu1xd,
 body.dark-mode .rc-header--room,
 body.dark-mode .rc-old .fixed-title {
   border-bottom-color: #3f4349 !important;
@@ -399,6 +419,9 @@ body.dark-mode th:nth-child(odd) {
 body.dark-mode tr:nth-child(even) td,
 body.dark-mode th:nth-child(even) {
   background-color: #2b2e32 !important;
+}
+body.dark-mode .rcx-\@txktj6 {
+  background-color: #36393e !important;
 }
 body.dark-mode .message .info .is-bot,
 body.dark-mode .message .info .role-tag {
@@ -523,4 +546,13 @@ body.dark-mode .message .reactions>li.add-reaction:hover {
 body.dark-mode .message.active,
 body.dark-mode .message:hover {
   background-color: #33363b;
+}
+body.dark-mode .message-actions {
+  border-color: #3d4048;
+  color: #a8a8a8;
+  background-color: #282a2f;
+}
+body.dark-mode .message-actions__button:hover,
+body.dark-mode .message-actions__menu:hover {
+  background-color: #34363c;
 }

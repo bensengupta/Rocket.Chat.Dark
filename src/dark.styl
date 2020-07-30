@@ -327,16 +327,30 @@ body.dark-mode
 	.contextual-bar__header,
 	.contextual-bar .rcx-\\\@1flttqf,
 	.rcx-\\\@1iusre9:hover,
+	.rcx-\\\@9jfjls,
+	.rcx-\\\@1yhzjdg,
+	.rcx-\\\@10ikbhr,
 	.rc-member-list__user:hover,
-	.flex-tab__result .attachments__item-link:hover
+	.flex-tab__result .attachments__item-link:hover,
+	.contextual-bar.contextual-bar
 		background-color darken(component-bg, 10%) !important
 	
 	/* Border colors */
-	.rcx-\\\@1purp9p, .rcx-\\\@xi6cg2
+	.rcx-\\\@1purp9p, .rcx-\\\@xi6cg2, .rcx-\\\@9jfjls, .rcx-\\\@1yhzjdg
 		border-block-start-color border-color !important
 		border-block-end-color border-color !important
 	
-	.rcx-\\\@1iusre9, .rc-header--room, .rc-old .fixed-title
+	/* Text color */
+	.rcx-\\\@9jfjls, .rcx-\\\@1wm5na
+		color component-fg !important
+
+	.rcx-\\\@1l3asra, .rcx-\\\@1rhw4nd
+		color sidebar-fg !important
+	
+	.rcx-\\\@197qq4o
+		color darken(sidebar-fg, 10%) !important
+	
+	.rcx-\\\@1iusre9, .rcx-\\\@1usu1xd, .rc-header--room, .rc-old .fixed-title
 		border-bottom-color border-color !important
 			
 	.rc-user-info-details
@@ -370,6 +384,10 @@ body.dark-mode
 
 	tr:nth-child(even) td, th:nth-child(even)
 		background-color darken(chat-bg, 20%) !important
+	
+	/* Admin panel background */
+	.rcx-\\\@txktj6
+		background-color chat-bg !important
 
 	.message .info .is-bot, .message .info .role-tag
 		background-color highlight-color
@@ -478,3 +496,11 @@ body.dark-mode
 	
 	.message.active, .message:hover
 		background-color darken(chat-bg, 5%)
+	
+	.message-actions
+		border-color  lighten(component-bg, 10%)
+		color darken(component-fg, 10%)
+		background-color darken(component-bg, 5%)
+	
+	.message-actions__button:hover, .message-actions__menu:hover
+		background-color lighten(component-bg, 5%)
